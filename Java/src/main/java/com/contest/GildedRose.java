@@ -1,14 +1,15 @@
 package com.contest;
 
 class GildedRose {
-    Item[] items;
+	Normal[] normals;
 
-    public GildedRose(Item[] items) {
-        this.items = items;
+    public GildedRose(Normal[] normals) {
+        this.normals = normals;
     }
 
-    public void updateQuality() {
-        items[0].sellIn = 9;
-        items[0].quality = 19;
+    public void updateQuality() throws TheValidQualityException {
+        for(Normal normal : normals) {
+        	normal.updateQuality();
+        }
     }
 }
